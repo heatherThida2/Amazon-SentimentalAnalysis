@@ -32,10 +32,8 @@ test = test.drop(['asin', 'helpful', 'reviewTime', 'reviewerID', 'reviewerName',
 train.head()
 
 # Cell
-# train.assign(good = lambda g: g.overall >= 4)
-# train.assign(good = lambda g: (1, 0)[g.overall >= 4])
 train2 = train.assign(good = lambda g: g.overall >= 4)
-train.assign(good = train2['good'].apply(lambda g: 1 if g else 0))
+trainFinal = train.assign(good = train2['good'].apply(lambda g: 1 if g else 0))
 
 # Cell
 def rm_stopwords_punctuation(text):
@@ -57,12 +55,38 @@ def rm_stopwords_punctuation(text):
     return text
 
 # Cell
-for text in train2['reviewText']:
+def stem(text):
+    stemmer = nltk.stem.porter.PorterStemmer()
+    # stem each word individually, and concatenate
+    text = ' '.join([stemmer.stem(word) for word in text.split(None)])
+    return text
+
+# Cell
+def process_text(text):
     text = rm_stopwords_punctuation(text)
+    text = stem(text)
+    return text
 
 # Cell
-train3 = train2.copy()
-train3['reviewText'] = train2['reviewText'].apply(lambda t: rm_stopwords_punctuation(t))
+trainFinal['reviewText'] = trainFinal['reviewText'].apply(lambda t: process_text(t))
 
 # Cell
-train2['reviewText']
+test2 = test.assign(good = lambda g: g.overall >= 4)
+testFinal = test.assign(good = test2['good'].apply(lambda g: 1 if g else 0))
+testFinal['reviewText'] = testFinal['reviewText'].apply(lambda t: process_text(t))
+
+# Cell
+y, X = patsy.dmatrices("good ~ reviewText", trainFinal, return_type="dataframe")
+y_test, X_test = patsy.dmatrices("good ~ reviewText", testFinal, return_type="dataframe")
+
+### Logistic Regression
+
+# Cell
+logRegrModel = skl.linear_model.LogisticRegression()
+logRegrModel = logRegrModel.fit(X, y['good'])
+
+# Cell
+logRegrModel.score(X, y['good'])
+
+# Cell
+logRegrModel.score(X_test, y_test['good'])
