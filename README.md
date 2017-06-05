@@ -18,20 +18,20 @@ Jupyter Notebook with a Python 3.5.2 kernel.
  * Unix: `sudo apt-get install python3-pip`.
  * Other: Follow [pip's manual installation instructions](https://pip.pypa.io/en/stable/installing/).
 
-3. Make sure your version of pip is up to date using `pip3 install --upgrade pip`.
+3. Ensure pip is up to date: `pip3 install --upgrade pip`.
 
-4. Install Jupyter using `pip3 install jupyter`.
+4. Install Jupyter: `pip3 install jupyter`.
 
-5. Install required dependencies using `pip3 install $(cat install-requires.txt)`.
+5. Install required dependencies: `pip3 install $(cat install-requires.txt)`.
 
-6. Extract the compressed data files: cd tar -xvf data.tar.gz
+6. Extract the compressed data files: `tar -xvf data.tar.gz`
 
 7. Open the project notebook:  
 `python3 -m jupyter notebook sentiment-analysis--amazon_commented.ipynb`.
 
 ***
 
-### External Dependencies:
+### External Dependencies
 
 - `matplotlib`: Data plotting tool
 - `nltk`: Natural language toolkit, used for stemming
