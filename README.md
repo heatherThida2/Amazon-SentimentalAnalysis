@@ -10,7 +10,7 @@ Jupyter Notebook with a Python 3.5.2 kernel.
 
 ### Setup instructions
 
-0. Clone this project using `git clone git@github.com:sanjaykaliyur/CSCI183-Project.git`.
+0. Clone this project using `git clone git@github.com:sanjaykaliyur/CSCI183-Project.git`, or download the zip file from the [github page](https://github.com/sanjaykaliyur/CSCI183-Project).
 
 1. If you don't already have it, install Python 3.5+ from [python.org](https://www.python.org/downloads/) or using `sudo apt-get install python3`.
 
