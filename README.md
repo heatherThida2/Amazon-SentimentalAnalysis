@@ -1,10 +1,14 @@
-# CSCI183_Project
+# CSCI 183 Final Project
 
-**Thida Aung, Sanjay Kaliyur, Erik Trewitt**
+**Logistic Regression & Naive Bayes on Amazon review data**
+
+*Thida Aung, Sanjay Kaliyur, Erik Trewitt*
 
 Jupyter Notebook with a Python 3.5.2 kernel.
 
-To set up and run:
+***
+
+### Setup instructions
 
 0. Clone this project using `git clone git@github.com:sanjaykaliyur/CSCI183-Project.git`.
 
@@ -24,3 +28,12 @@ To set up and run:
 
 7. Open the project notebook:  
 `python3 -m jupyter notebook sentiment-analysis--amazon_commented.ipynb`.
+
+***
+
+### External Dependencies:
+
+- `matplotlib`: Data plotting tool
+- `nltk`: Natural language toolkit, used for stemming
+- `pandas`: Data processing toolkits
+- `sklearn`: Machine learning algorithm library
