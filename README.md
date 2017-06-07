@@ -4,7 +4,7 @@
 
 *Thida Aung, Sanjay Kaliyur, Erik Trewitt*
 
-Jupyter Notebook with a Python 3.5.2 kernel.
+Jupyter Notebook with a Python 3.5.2 kernel. Tested and run on Mac OS X, but should be platform-independent due to the nature of Python.
 
 ***
 
@@ -24,7 +24,7 @@ Jupyter Notebook with a Python 3.5.2 kernel.
 
 5. Install required dependencies: `pip3 install $(cat install-requires.txt)`.
 
-6. Extract the compressed data files: `tar -xvf data.tar.gz`
+6. Download the compressed data files from [source](http://jmcauley.ucsd.edu/data/amazon/) (Video Game and Musical Instrument 5-core), decompress them, and place them in `data/`.
 
 7. Open the project notebook:  
 `python3 -m jupyter notebook sentiment-analysis--amazon_commented.ipynb`.
