@@ -34,6 +34,6 @@ Jupyter Notebook with a Python 3.5.2 kernel. Tested and run on Mac OS X, but sho
 ### External Dependencies
 
 - `matplotlib`: Data plotting tool
-- `nltk`: Natural language toolkit, used for stemming
+- `nltk`: Natural language toolkit, used for stemming (it's no longer valid or showing error when run with github console
 - `pandas`: Data processing toolkits
 - `sklearn`: Machine learning algorithm library
